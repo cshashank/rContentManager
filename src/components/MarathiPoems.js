@@ -24,7 +24,7 @@ export default function MarathiPoems() {
 
     return (
         <div>
-            Marathi poems {items[0].name}
+            Marathi poems links {items[0].name}
             {items.map((item,index) => (
                 <div key={index}>
                     <h3>{item.name} </h3>
