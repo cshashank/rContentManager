@@ -32,8 +32,10 @@ const styles = theme => ({
 
 const MarathiPoems = withStyles(styles)(({ classes }) => {
     localStorage.setItem('poemURL', 'marathi1');
+    let [query, setQuery] = useState(null)
     const [items, setItems] = useState([{}])
     useEffect(() => {
+        console.log('in use effect marathi poems ' + query);
         const tempUrl = localStorage.getItem('poemURL');
         fetch('data/marathiDb.json'
             , {
@@ -50,12 +52,14 @@ const MarathiPoems = withStyles(styles)(({ classes }) => {
                 setItems(data)
                 console.log(' setting data  ' + data)
             });
-    }, []);
+    }, [query]);
 
     const [value, setValue] = useState(0);
 
     const onChange = (e, value) => {
         setValue(value);
+        let tQuery = (value == 0) ? "poemQuery" : "articleQuery";
+        setQuery(tQuery);
     };
 
     return (

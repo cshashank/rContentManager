@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-export default function EnglishPoems() {
+const EnglishPoems=() =>{
+    const [items, setItems] = useState([{}])
+    useEffect(()=>{
+        console.log(" use effect english poem");
+    },[]);
     return (
         <div>
             English poems
         </div>
     )
 }
+
+
+export default EnglishPoems
