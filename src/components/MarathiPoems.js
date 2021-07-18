@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -8,6 +8,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
+import PoemContext from '../store/poemContext';
 
 const styles = theme => ({
     card: {
@@ -31,9 +32,13 @@ const styles = theme => ({
 });
 
 const MarathiPoems = withStyles(styles)(({ classes }) => {
+ 
     localStorage.setItem('poemURL', 'marathi1');
     let [query, setQuery] = useState(null)
     const [items, setItems] = useState([{}])
+    const { pCtx, setPCtx} = useContext(PoemContext);
+    console.log('tPoemContext is  ' + pCtx);
+
     useEffect(() => {
         console.log('in use effect marathi poems ' + query);
         const tempUrl = localStorage.getItem('poemURL');
@@ -58,7 +63,7 @@ const MarathiPoems = withStyles(styles)(({ classes }) => {
 
     const onChange = (e, value) => {
         setValue(value);
-        let tQuery = (value == 0) ? "poemQuery" : "articleQuery";
+        let tQuery = (value === 0) ? "poemQuery" : "articleQuery";
         setQuery(tQuery);
     };
 
@@ -81,6 +86,10 @@ const MarathiPoems = withStyles(styles)(({ classes }) => {
                                 </CardContent>
                             </Card>
                         ))}
+                        <Button onClick={() => setPCtx('state ctxt')}>
+                            click me
+                        </Button>
+                        <div>123 {pCtx}</div>
                     </Typography>
                 )}
                 {value === 1 && (
