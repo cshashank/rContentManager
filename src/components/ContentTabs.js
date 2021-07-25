@@ -25,8 +25,12 @@ const MarathiTabs = withStyles(styles)(({ classes }) => {
 
     const onChange = (e, value) => {
         setValue(value);
-        let tQuery = (value === 0) ? "poemQuery" : "articleQuery";
+        let tQuery = (value === 0) ? 
+              UtilConstants().MARATHI_POEM_DB_URL
+            : UtilConstants().MARATHI_ARTICLE_DB_URL;
         setQuery(tQuery);
+        setPCtx(tQuery);
+        console.log('pctx is '+pCtx);
     };
 
     return (
@@ -40,12 +44,10 @@ const MarathiTabs = withStyles(styles)(({ classes }) => {
                     </Tabs>
                 </AppBar>
                 {value === 0 && (
-                    <ContentManager></ContentManager>
+                    <ContentManager ></ContentManager>
                 )}
                 {value === 1 && (
-                    <Typography component="div" className={classes.tabContent}>
-                        Item Two
-                    </Typography>
+                    <ContentManager></ContentManager>
                 )}
             </div>
         </div>

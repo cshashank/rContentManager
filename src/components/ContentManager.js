@@ -12,7 +12,7 @@ import PoemContext from '../store/poemContext';
 import { UtilConstants } from '../Utils/contentUtil';
 import { styles } from '../Utils/ContentStyle';
 
-const ContentManager = withStyles(styles)(({ classes }) => {
+const ContentManager = withStyles(styles)(({ classes,sname }) => {
 
     localStorage.setItem('poemURL', 'marathi1');
     let [query, setQuery] = useState(null)
@@ -23,7 +23,8 @@ const ContentManager = withStyles(styles)(({ classes }) => {
     useEffect(() => {
         console.log('in use effect marathi poems ' + query);
         const tempUrl = localStorage.getItem('poemURL');
-        fetch(UtilConstants().MARATHI_POEM_DB_URL
+
+        fetch(pCtx
             , {
                 "headers": {
                     "ContentType": "application/json",
@@ -54,14 +55,21 @@ const ContentManager = withStyles(styles)(({ classes }) => {
                 {items.map((item, index) => (
                     <Card className={classes.card} key={index}>
                         <CardContent>
-                            <Typography variant="h5" color="primary">{item.name}</Typography>
+                            <Typography variant="normal" color="primary">
+                                <a target="_blank" href={item.url} rel="noreferrer">
+                                {item.name}
+                                </a>
+                            </Typography>
                         </CardContent>
                     </Card>
                 ))}
                 <Button onClick={() => setPCtx('state ctxt')}>
                     click me
                 </Button>
-                <div>123 {pCtx} aabb {UtilConstants().MARATHI_POEM_DB_URL}</div>
+                <div>123 {pCtx} 
+                    aabb 
+                    {UtilConstants().MARATHI_POEM_DB_URL} 
+                </div>
             </Typography>
         </div>
     )
