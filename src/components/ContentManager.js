@@ -1,28 +1,25 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import PoemContext from '../store/poemContext';
-import { UtilConstants } from '../Utils/contentUtil';
+import { UtilConstants, Paginate } from '../Utils/contentUtil';
 import { styles } from '../Utils/ContentStyle';
+import Link from '@material-ui/core/Link'
 
 const ContentManager = withStyles(styles)(({ classes,sname }) => {
 
     localStorage.setItem('poemURL', 'marathi1');
     let [query, setQuery] = useState(null)
     const [items, setItems] = useState([{}])
+    let [pageNo, setPage] = useState(0)
     const { pCtx, setPCtx } = useContext(PoemContext);
     console.log('tPoemContext is  ' + pCtx);
 
     useEffect(() => {
         console.log('in use effect marathi poems ' + query);
-        const tempUrl = localStorage.getItem('poemURL');
+        console.log('context is  ' + pCtx);
 
         fetch(pCtx
             , {
@@ -36,10 +33,11 @@ const ContentManager = withStyles(styles)(({ classes,sname }) => {
                 return response.json()
             })
             .then(data => {
-                setItems(data)
-                console.log(' setting data  ' + data)
+               let data1=Paginate(data,pageNo,4);
+                setItems(data1);
+                console.log(' setting data  ' + JSON.stringify(data1))
             });
-    }, [query]);
+    }, [query,pageNo]);
 
     const [value, setValue] = useState(0);
 
@@ -49,6 +47,11 @@ const ContentManager = withStyles(styles)(({ classes,sname }) => {
         setQuery(tQuery);
     };
 
+    const nextPage = () =>{
+        setPage(pageNo+1)
+
+    }
+    
     return (
         <div>
             <Typography component="div" className={classes.tabContent}>
@@ -63,13 +66,9 @@ const ContentManager = withStyles(styles)(({ classes,sname }) => {
                         </CardContent>
                     </Card>
                 ))}
-                <Button onClick={() => setPCtx('state ctxt')}>
-                    click me
-                </Button>
-                <div>123 {pCtx} 
-                    aabb 
-                    {UtilConstants().MARATHI_POEM_DB_URL} 
-                </div>
+                <Link href="#" onClick={nextPage}>
+                    Next
+                </Link>
             </Typography>
         </div>
     )

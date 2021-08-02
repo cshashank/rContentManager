@@ -6,7 +6,7 @@ import ContentTabs from './components/ContentTabs';
 import EnglishPoems from './components/EnglishPoems';
 import Navbar from './components/Navbar'
 import PoemContext from './store/poemContext';
-import { StepContent } from '@material-ui/core';
+import { UtilConstants } from './Utils/contentUtil';
 
 function App(props) {
   const Home = () => (
@@ -15,7 +15,7 @@ function App(props) {
     </div>
   );
 
-  const [pCtx, setPCtx] = useState("init context")
+  const [pCtx, setPCtx] = useState(UtilConstants().MARATHI_POEM_DB_URL)
     
   return (
   <PoemContext.Provider value={{pCtx, setPCtx}}>

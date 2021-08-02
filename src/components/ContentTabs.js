@@ -35,7 +35,7 @@ const MarathiTabs = withStyles(styles)(({ classes }) => {
 
     return (
         <div>
-            Marathi poems links {items[0].name}
+            Marathi poems links 
             <div className={classes.root}>
                 <AppBar position="static">
                     <Tabs value={value} onChange={onChange}>
