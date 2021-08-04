@@ -17,7 +17,9 @@ export const Paginate=(data,pageNumber,pageLength)=>{
     let startData = pageNumber*pageLength;
     let endData = startData+pageLength;
 
-    
+    console.log('startData is %s',startData);
+    console.log('endData is %s', endData);
+ 
     console.log(' data length '+data.length);
     console.log('sliced '+data.slice(1,3));
     return data.slice(startData, endData);

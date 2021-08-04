@@ -11,8 +11,10 @@ import Link from '@material-ui/core/Link'
 const ContentManager = withStyles(styles)(({ classes,sname }) => {
 
     localStorage.setItem('poemURL', 'marathi1');
+    const pageLength=4;
     let [query, setQuery] = useState(null)
     const [items, setItems] = useState([{}])
+    const [pageData,setPageData]= useState([{}])
     let [pageNo, setPage] = useState(0)
     const { pCtx, setPCtx } = useContext(PoemContext);
     console.log('tPoemContext is  ' + pCtx);
@@ -33,11 +35,13 @@ const ContentManager = withStyles(styles)(({ classes,sname }) => {
                 return response.json()
             })
             .then(data => {
-               let data1=Paginate(data,pageNo,4);
-                setItems(data1);
-                console.log(' setting data  ' + JSON.stringify(data1))
+                setItems(data);
+                let data1 = Paginate(data, 0, pageLength);
+                setPageData(data1);
+                setPage(pageNo + 1)
+                console.log(' setting data  ' + JSON.stringify(data))
             });
-    }, [query,pageNo]);
+    }, [query]);
 
     const [value, setValue] = useState(0);
 
@@ -48,14 +52,18 @@ const ContentManager = withStyles(styles)(({ classes,sname }) => {
     };
 
     const nextPage = () =>{
-        setPage(pageNo+1)
+        if((pageNo)*pageLength<items.length){
+            setPage(pageNo + 1);
+            let data1 = Paginate(items, pageNo, pageLength);
+            setPageData(data1);
+        }
 
     }
     
     return (
         <div>
             <Typography component="div" className={classes.tabContent}>
-                {items.map((item, index) => (
+                {pageData.map((item, index) => (
                     <Card className={classes.card} key={index}>
                         <CardContent>
                             <Typography variant="normal" color="primary">
