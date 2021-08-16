@@ -17,20 +17,20 @@ import { styles } from '../Utils/ContentStyle';
 const MarathiTabs = withStyles(styles)(({ classes }) => {
  
     let [query, setQuery] = useState(null)
-    const [items, setItems] = useState([{}])
     const { pCtx, setPCtx} = useContext(PoemContext);
-    console.log('tPoemContext is  ' + pCtx);
+    console.log('tPoemContext is  ' + JSON.stringify(pCtx));
 
     const [value, setValue] = useState(0);
 
     const onChange = (e, value) => {
         setValue(value);
         let tQuery = (value === 0) ? 
-              UtilConstants().MARATHI_POEM_DB_URL
-            : UtilConstants().MARATHI_ARTICLE_DB_URL;
+              "poemURL"
+            : "articleURL";
         setQuery(tQuery);
-        setPCtx(tQuery);
-        console.log('pctx is '+pCtx);
+        pCtx.tabValue = value;
+        setPCtx(pCtx);
+        console.log('pctx is '+value +' '+JSON.stringify(pCtx));
     };
 
     return (

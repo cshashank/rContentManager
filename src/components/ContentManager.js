@@ -4,26 +4,34 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import PoemContext from '../store/poemContext';
-import { UtilConstants, Paginate } from '../Utils/contentUtil';
+import { UtilConstants,fetchDbUrls, Paginate } from '../Utils/contentUtil';
 import { styles } from '../Utils/ContentStyle';
 import Link from '@material-ui/core/Link'
 
 const ContentManager = withStyles(styles)(({ classes,sname }) => {
 
-    localStorage.setItem('poemURL', 'marathi1');
     const pageLength=4;
     let [query, setQuery] = useState(null)
     const [items, setItems] = useState([{}])
     const [pageData,setPageData]= useState([{}])
     let [pageNo, setPage] = useState(0)
     const { pCtx, setPCtx } = useContext(PoemContext);
-    console.log('tPoemContext is  ' + pCtx);
+    console.log('tPoemContext lang is  ' + pCtx.language);
 
     useEffect(() => {
         console.log('in use effect marathi poems ' + query);
         console.log('context is  ' + pCtx);
 
-        fetch(pCtx
+        console.log('fetchDbUrls '+fetchDbUrls("marathi").poemURL);
+        let dataURLs = fetchDbUrls(pCtx.language);
+        console.log('poemURL '+dataURLs.poemURL);
+        let selectedURL="";
+        if(pCtx.tabValue===0){
+            selectedURL = dataURLs.poemURL;
+        }else{
+            selectedURL = dataURLs.articleURL
+        }
+        fetch(selectedURL
             , {
                 "headers": {
                     "ContentType": "application/json",
@@ -41,15 +49,8 @@ const ContentManager = withStyles(styles)(({ classes,sname }) => {
                 setPage(pageNo + 1)
                 console.log(' setting data  ' + JSON.stringify(data))
             });
-    }, [query]);
+    }, [query,pCtx]);
 
-    const [value, setValue] = useState(0);
-
-    const onChange = (e, value) => {
-        setValue(value);
-        let tQuery = (value === 0) ? "poemQuery" : "articleQuery";
-        setQuery(tQuery);
-    };
 
     const nextPage = () =>{
         if((pageNo)*pageLength<items.length){

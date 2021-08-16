@@ -10,6 +10,28 @@ export const UtilConstants=() =>{
 
 }
 
+export const fetchDbUrls=(language)=>{
+    let dbUrls={}
+    if(language=="marathi"){
+        dbUrls = {
+            poemURL: "data/marathiPoemsDb.json",
+            articleURL: "data/marathiArticlesDb.json"
+        }
+    } else if (language == "english"){
+        dbUrls = {
+            poemURL: "data/englishPoemsDb.json",
+            articleURL: "data/englishArticlesDb.json"
+        }
+
+    }else{
+        dbUrls = {
+            poemURL: "data/hindiPoemsDb.json",
+            articleURL: "data/hindiArticlesDb.json"
+        }
+    }
+
+    return dbUrls;
+}
 export const Paginate=(data,pageNumber,pageLength)=>{
 //    let pageNumber = 0;
 //    let pageLength = 4;
