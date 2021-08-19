@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 
 const ContentTabs = withStyles(styles)(({ classes }) => {
  
-    const { pCtx, setPCtx} = useContext(PoemContext);
+    const { pCtx, setPCtx,updateTabVal} = useContext(PoemContext);
     console.log('tPoemContext is  ' + JSON.stringify(pCtx));
 
     const [value, setValue] = useState(0);
@@ -20,10 +20,11 @@ const ContentTabs = withStyles(styles)(({ classes }) => {
         setValue(value);
         pCtx.tabValue = value;
         setPCtx(pCtx);
+        updateTabVal(value);
     };
 
     useEffect(()=>{
-        setValue(0)
+        setValue(pCtx.tabValue)
     },[pCtx])
 
     return (

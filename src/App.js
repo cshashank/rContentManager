@@ -19,20 +19,20 @@ function App(props) {
 
   const [pCtx, setPCtx] = useState({})
   const history = useHistory();
+  let ctxTabValue=0;
   const handleMarathi = () => {
-    let currentTabValue = pCtx.tabValue;
-    console.log("current tab value "+currentTabValue);
+    console.log("current tab value " + ctxTabValue);
     setPCtx({ 
       "query": UtilConstants().MARATHI_POEM_DB_URL,
       "language": "marathi",
-      "tabValue":0});
-      history.push('/content',{'tabValue':pCtx.tabValue})
+      "tabValue": ctxTabValue});
+      history.push('/content')
   }
   const handleEnglish = () => {
     setPCtx({
       "query": UtilConstants().MARATHI_POEM_DB_URL,
       "language": "english",
-      "tabValue": 0
+      "tabValue": ctxTabValue
     });
     history.push('/content')
   }
@@ -40,12 +40,16 @@ function App(props) {
     setPCtx({
       "query": UtilConstants().MARATHI_POEM_DB_URL,
       "language": "hindi",
-      "tabValue": 0
+      "tabValue": ctxTabValue
     });
     history.push('/content')
   }
+  const updateTabVal= val =>{
+    ctxTabValue=val;
+    console.log("tab value updated "+val)
+  }
   return (
-  <PoemContext.Provider value={{pCtx, setPCtx}}>
+  <PoemContext.Provider value={{pCtx, setPCtx,updateTabVal}}>
   <main>
     {/* <Navbar></Navbar> */}
     <button type="button" onClick={handleMarathi}>
