@@ -12,7 +12,9 @@ import { useHistory } from 'react-router-dom';
 
 function App(props) {
   const Home = () => (
-    <div>
+    <div style={{
+      backgroundImage: `url("https://www.popsci.com/uploads/2020/06/05/3NIEQB3SFVCMNHH6MHZ42FO6PA.jpg")`
+    }}>
       <h2>Home</h2>
     </div>
   );

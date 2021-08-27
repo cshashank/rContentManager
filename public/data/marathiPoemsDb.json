@@ -5,24 +5,169 @@
         "date": "01/01/21"
     },
     {
-        "name": "marathi poem2",
+        "name": "जखम",
+        "url" : "https://docs.google.com/document/d/e/2PACX-1vT2O6-INYxGmtP-5hCnUbq_1FxzvXLuLJvdb4uWv2xIbyAlTrQP3McOl-WRyJb8qngrssJfPSGhaYVd/pub",
+        "date": "08/20/21"
+    },
+    {
+        "name": "मेघ - (खरा मित्र)",
+        "url":"https://docs.google.com/document/d/e/2PACX-1vTI66vvMHVRb_5OPc8c9GJQajCeo__U-fQX9NoMDTDZ4iH6oNbSfvyEemlqOYdj5d6XisbQY1C4MGxe/pub", 
         "date": "01/01/21"
     },
     {
-        "name": "marathi poem3",
-        "date": "01/01/21"
+        "name": "शोध",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vRS89YlC3WWO6HIHWlkbB9wyNLABojbQylbbRvxtmxr-sNNb3-htfXZrq6FERgBjdPn3AY_ipayicRC/pub",
+        "date": "08/01/21"
     },
     {
-        "name": "गुरु1",
-        "url": "https://docs.google.com/document/d/e/2PACX-1vRzeWud9pkpfM_Cmv4AOUYGObnL9_Um5Ktr0NW-QDQ0wg_CeR44e9V5INYeKEPlOZVCK209lSCCvcUu/pub",
-        "date": "01/01/21"
+        "name": "स्वातंत्र्य लढा",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vQghgsDc33qdO1UhoJCVSDyRGDOgZHCyRxCRxIRwVfVs4ESSj4dMiSSgnw9t_IDdIVzHhqa_0fALz2C/pub",
+        "date": "08/15/21"
     },
     {
-        "name": "marathi poem5",
-        "date": "01/01/21"
+        "name": "शब्द",
+        "url":"https://docs.google.com/document/d/e/2PACX-1vSRgqg28S7W30xJg_UrxFq1pE1ch4EtVNpQqF7to3GEudDqonKeAXkDEhMGjbQZjkNQH2EOSJ9pbfpo/pub",
+        "date": "09/01/21"
     },
     {
-        "name": "marathi poem6",
-        "date": "01/01/21"
-    }
+        "name": "ठिणगी",
+        "url": "https: //docs.google.com/document/d/e/2PACX-1vSmJexflFfW5rTZN4nKdmKeJhCGZMYIBHh5pBY9EAsIjYV7EgIrZYnWrxS2ZxfXwVC9Zu4bfXFlATNL/pub",
+        "date": "07/01/21"
+    },
+    {
+        "name":"पालखी",
+        "url":"https://docs.google.com/document/d/e/2PACX-1vTiLZN2qxTngztSCayOXSPKCoghKIU8a672V39yGJknFq5s1_vHOc3CXQs1mfVY2ygQN0xIkLiFaqX_/pub",
+        "date":"7/1/21"
+    },
+    {
+        "name": "अंधाराचा शोध",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vTiLZN2qxTngztSCayOXSPKCoghKIU8a672V39yGJknFq5s1_vHOc3CXQs1mfVY2ygQN0xIkLiFaqX_/pub",
+        "date": "7/1/21"
+    },
+    {
+        "name": "तयार",
+        "url": "https: //docs.google.com/document/d/e/2PACX-1vS4yRevbdFDIn0ox613NcZaXyMjtM9lP5CowgMTaby8yvYZJa8iIF_JD3U__WWzo4XnFAc3yV-ggjKc/pub",
+        "date": "7/1/21"
+    },
+    {
+        "name": "गडद्द",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vTRRGO1r4E93rcrZBZBEZhMs1OBOxIwaov8WbFi2XrUgnu_Uc6nVo_bKC3z_Epf95BozW4EdYe1WMBM/pub",
+        "date": "7/1/21"
+    },
+    {
+        "name": "पालखी ",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vTiLZN2qxTngztSCayOXSPKCoghKIU8a672V39yGJknFq5s1_vHOc3CXQs1mfVY2ygQN0xIkLiFaqX_/pub",
+        "date": "7/1/21"
+    },
+    {
+        "name": "सूर्यास्त",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vTC-I10sPjb9mY3rFUmwV4m2F0p60dEybdOvduPz3Qzn_jiDLyGHNP8qtfUo28FbhyIactdAaGGc7Qv/pub",
+        "date": "6/1/21"
+    },
+    {
+        "name": "प्रतिबिंब",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSBgzYuE_Eu1rYAqT4pup9cGVrgZOEcuCvRuq0yhvTFeDrM7dOitPodZgflhsYsutojOMXmala_H4Ci/pub",
+        "date": "7/1/21"
+    },
+    {
+        "name": "संघर्ष",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vR4kO6hP2TBlvRK-4apQ4oMikRTQC2rGuUVP3yNSthnUIEdzWbHx7almIr624nwBbsvdt5GZzR1P3aa/pub",
+        "date": "7/1/21"
+    },
+    {
+        "name": "साधेपणा",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSotPFecnr7ztdwMS-BNylWnfKAnuDlY2S-vjZKbTvvIcd0C2b-IQuWsaReJZD025K_3cjRdTqyejI6/pub",
+        "date": "7/1/21"
+    },
+    {
+        "name": "सूर्य ग्रहण वासी",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSKKfAruYJEdkjJ1Yk4OjjDG1O35nk5jMeW54bkWd3LWC70Me34K38VUHUDq1w3Vw1YLZIHteDcdx_t/pub",
+        "date": "6/1/21"
+    },
+    {
+        "name": "जिद्द",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSIMBa2_6fnwTnweJGmAJsKLEzG6mGhnNDoXK3BWyHTzpgTvEbq__TOPqHVPl-nlenUflJM3F6NXPQB/pub",
+        "date": "6/1/21"
+    },
+    {
+        "name": "यम दूत",
+        "url": "https: //docs.google.com/document/d/e/2PACX-1vQGRh89tspigjh4ofHVcEmv3eSSuNAZyAqDuFEnwe1wWGzXtOId1frAKhfqGCVMR4gJoQ5IofwkY0vR/pub",
+        "date": "6/1/21"
+    },
+    {
+        "name": "व्याकूळ",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vTOKXKoZd6lrjowhYik8AtQG-WbX4DksgrdQ_m5T43WnPvSzwCLea1jMWlCNm66ZEFDpO84UOKCbrfM/pub",
+        "date": "5/1/21"
+    },
+    {
+        "name": "आपला माणुस",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vRZnCw-t7Xmmv-8Sq4lf3sAVHk-e899akcd2sT2FCm6rUNwBo-VY__BHyyw2DyTxWkgHKReDvMW8UUM/pub",
+        "date": "5/1/21"
+    },
+    {
+        "name": "गीतारंभ",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vQi7SapBHgbDRa3bM49fJCWIZ1uhFFXShxmDSYGvHlQ_Aft7PcGdOQsG28UzZhhCttPwL742-cgNqWv/pub",
+        "date": "5/1/21"
+    },
+    {
+        "name": "मैत्रीचे मोल",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vRkrwqYuXD_EYYzcQXGZ2Okp-9s8j5zS2FXd9HnydQhM-ZkVkeeFaMz5exw43UDLkcwaxnfn9uRJThw/pub",
+        "date": "5/1/21"
+    },
+    {
+        "name": "फुल रान",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSeCVKA5XzVT6R18H7V0kMedRdHzzaHZBOIFbFEU1VSZ8mtiJ2x6TikABeotgHasiiMj1D88E1nhapc/pub",
+        "date": "5/1/21"
+    },
+    {
+        "name": "तळमळ",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vQjW6iy5mY5mJKplZMMrvQjLhPeKd29Qmuuu9ZEXqzRYy9GVOqeIUJV2PcQFomNnC7Xa6HeutoNPyWd/pub",
+        "date": "5/1/21"
+    },
+    {
+        "name": "आई",
+        "url": "https: //docs.google.com/document/d/e/2PACX-1vSCLDsTee8by2wCC8v8T59K3jUoc0n3uvnw59H17PfyfezrfGkI0HKLNjeFS2bPrxkjBWER6-CScIDy/pub",
+        "date": "5/1/21"
+    },
+    {
+        "name": "प्रेरणा",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vQOLit-uo1cCNtqB5TZGT5vmnie0mvYNCKEpli06MfoYkgon7S1nslp3QwOQ9f-1cxBwrPoFQMxjF3F/pub",
+        "date": "5/15/21"
+    },
+    {
+        "name": "प्पतंग",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vTnmIa_-ndmze7zuIKQez8vOhPKsJaZsHuPQmdD9b1uEGmJdq85UQSr7cx-3wDTH1xp-nKJSle4Tjoz/pub",
+        "date": "5/15/21"
+    },
+    {
+        "name": "अर्जुन व्यथा",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSEkqwuMjf8viguKC4ScG-tQyL6UUdPXR-S4EMhl40qMsf2plqgeMr8evrbahI9HZhJ5M6-v722BPtH/pub",
+        "date": "5/15/21"
+    },
+    {
+        "name": "राम",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vTyB1frVh7Svr-2qAqAUxAqNR7RHd7zVtC-ZV0-ZJf5Px_TdaIRdu3KSaRu7J1HQPIuYItvLX1RuhdP/pub",
+        "date": "5/15/21"
+    },
+    {
+        "name": "तूच तू",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vQiSS34uICht36jMYYE5J9GHqY2XDchMkniQ7mLhfDhfR9gf1Hh1-ykz_LPEtXfl8DyJiS_grPmIlss/pub",
+        "date": "5/01/21"
+    },
+    {
+        "name": "भास",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSxHK1aMGQr7qFs2Qt_QLerrmv_f-E_xXLfr_kRk5r7GfmovLaIpuhLtMs2upNlU6Cisg0MVe0XSHeg/pub",
+        "date": "4/10/21"
+    },
+    {
+        "name": "भास",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSxHK1aMGQr7qFs2Qt_QLerrmv_f-E_xXLfr_kRk5r7GfmovLaIpuhLtMs2upNlU6Cisg0MVe0XSHeg/pub",
+        "date": "4/10/21"
+    }   
+
+    
+    
+    
+    
+
 ]

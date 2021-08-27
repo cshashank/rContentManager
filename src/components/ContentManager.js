@@ -8,9 +8,9 @@ import { UtilConstants,fetchDbUrls, Paginate } from '../Utils/contentUtil';
 import { styles } from '../Utils/ContentStyle';
 import Link from '@material-ui/core/Link'
 
-const ContentManager = withStyles(styles)(({ classes,sname }) => {
+const ContentManager = withStyles(styles)(({ classes }) => {
 
-    const pageLength=4;
+    const pageLength=8;
     let [query, setQuery] = useState(null)
     const [items, setItems] = useState([{}])
     const [pageData,setPageData]= useState([{}])
@@ -75,9 +75,11 @@ const ContentManager = withStyles(styles)(({ classes,sname }) => {
                         </CardContent>
                     </Card>
                 ))}
-                <Link href="#" onClick={nextPage}>
-                    Next
-                </Link>
+                <div className={classes.nextLink}>
+                    <Link href="#" onClick={nextPage}>
+                        Next
+                    </Link>
+                </div>
             </Typography>
         </div>
     )

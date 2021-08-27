@@ -2,13 +2,12 @@ import React from 'react'
 
 export const styles = theme => ({
     card: {
-        width: 100,
+        width: 200,
         height: 60,
         textAlign: 'top',
         background: 'lightblue',
         border: 'black',
-        margin: 3
-    },
+        margin: 3    },
     cardActions: {
         justifyContent: 'center'
     },
@@ -17,7 +16,14 @@ export const styles = theme => ({
         backgroundColor: theme.palette.background.paper
     },
     tabContent: {
-        padding: theme.spacing(1)
+        padding: theme.spacing(1),
+        width: "100%",
+        height: "100%",
+        backgroundImage: `url("/bgimg.jpg")`,
+        backgroundSize: "cover",
+        backgroundRepeat: "noRepeat",
+        backgroundPosition: "center center",
+        backgroundSize:"1600px 600px"
     },
     cardcontent: {
         padding: 0,
@@ -26,5 +32,11 @@ export const styles = theme => ({
         "&:last-child": {
             paddingBottom: 0
         }
+    },
+    nextLink:{
+        backgroundColor:"red",
+        width:"200px",
+        height:"30px",
+        textAlign:"center"
     }
 });

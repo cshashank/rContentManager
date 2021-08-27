@@ -1,26 +1,64 @@
 [
     {
-        "name": "marathi article1",
+        "name": "ॐ चा अर्थ  - भाग-1",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSDXwe_IyL-nF7FbVzDr2LYBF7t1e-26BgvcgEBGFXLDaC3uUUELMoUbibPHg-DVMq0kPDoj8-wNem9/pub",
+        "date": "08/01/21"
+    },
+    {
+        "name": "ॐ चा अर्थ  - भाग-२",
+        "url":"https://docs.google.com/document/d/e/2PACX-1vT-c00Yub0oc6XLQFDIizHB_PYqQGl4EIU9EcQUZahomTHhXAtO6oDV2nGowi4fw0KD_9xcOXKw3XbE/pub",
+        "date": "08/07/21"
+    },
+    {
+        "name": "वेदांतकालीन ऋषींणी गार्गी आणि आधुनिक विश्वविज्ञान",
+        "url":"https://docs.google.com/document/d/e/2PACX-1vQmwiAZrXD_Yfb-53vrrl4YB5eh_KI_QrwIuPi4kcwM7jlimkigwe9B3Gf_SMJuuIculM120WSVzpLR/pub",
+        "date": "07/31/21"
+    },
+    {
+        "name": "बृहदारण्यक उपनिषद् आणि ब्राम्हणाचे प्रकार",
+        "url":"https://docs.google.com/document/d/e/2PACX-1vRAW2fwN7em8Q-dwnJBZC13_4MrInrF7orrEuaSN0JJUlGtEACgw7uskHj8iQ6f_X3QFGXFA3P3Sve1/pub",
         "date": "01/01/21"
     },
     {
-        "name": "marathi article2",
-        "date": "01/01/21"
+        "name": "वेदांताचे मूलभूत तत्व",
+        "url":"https://docs.google.com/document/d/e/2PACX-1vQsXI3pL08vnBiFd1l8cipfAq0Zrl5TM7JCHQ6bTJXclzvnZ7MKpD_jTLnmz4djg4SzirWELX7ZTmf2/pub",
+        "date": "06/01/21"
     },
     {
-        "name": "marathi article3",
-        "date": "01/01/21"
+        "name": "ब्रम्ह सूत्र",
+        "url":"https://docs.google.com/document/d/e/2PACX-1vTsn_n9f34NuZ6bMQH4SHb11oDI02KhNiOGT4EoP48KJYMUf1X8ocNcsOY8paQbX-mz9F_lSceB4bgv/pub",
+        "date": "07/01/21"
     },
     {
-        "name": "marathi article4",
-        "date": "01/01/21"
+        "name": "वेदांत आणि एनर्जी (energy)",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vS2JUjdMmtAsug76g0rDjfWSX3bbY8jW7hlah958K3zobCY2DELw5kHLEYnFlZ4uy_Gkee1NaHRT6-h/pub",
+        "date": "07/01/21"
     },
     {
-        "name": "marathi article5",
-        "date": "01/01/21"
+        "name": "उपनिषद - एक धावती भेट",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vRhlpXfWmbSuYgJ8_5Qjv1hByNGAsBdzzVkThTdIVuuUHDj9LHmAUoo69OrigNST8tuWeGfKV7Or1VC/pub",
+        "date": "07/01/21"
     },
     {
-        "name": "marathi article6",
-        "date": "01/01/21"
+        "name": "विज्ञाना आणि त्रिगुण",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSSjjrgdYqlSOxpO9OcLF87Itfioj6SYh7u5lPbtPpGu2Et61nYERdN7TG5VJMENca2MwtZirq9r1ma/pub",
+        "date": "07/01/21"
+    },
+    {
+        "name": "Covid आणि गीता",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vQpEYq9pdUcmmSrWdXe-8ximtHzfpQCL0h8Fv7Ia5IpITC9YZJ43NSkVqDjYdxE5fzK1iGV8pmItD4x/pub",
+        "date": "05/01/21"
+    },
+    {
+        "name": "पाश्चात्य शंकराचार्य",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vQxEETjf96XmVIQ0AdhFudBDViboywwctLm3AmmCMnQmJdfQEnj2uQer0ecwJ6RZRpJ_9jebfgAfemc/pub",
+        "date": "05/01/21"
+    },
+    {
+        "name": "उपनिषद आणि गीतेचा (थोडक्यात) इतिहास",
+        "url": "https://docs.google.com/document/d/e/2PACX-1vSUgXwUPIj09R4hrV4BwEsIW9fD5IDYptI5wRg6fOxMRSSU1oTO6f-x4SfP0jSnuz7_iTNm1iN18xnt/pub",
+        "date": "04/01/21"
+    },{
+
     }
 ]
