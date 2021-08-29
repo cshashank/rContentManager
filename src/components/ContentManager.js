@@ -46,23 +46,39 @@ const ContentManager = withStyles(styles)(({ classes }) => {
                 setItems(data);
                 let data1 = Paginate(data, 0, pageLength);
                 setPageData(data1);
-                setPage(pageNo + 1)
+//                setPage(pageNo + 1)
                 console.log(' setting data  ' + JSON.stringify(data))
             });
     }, [query,pCtx]);
 
 
     const nextPage = () =>{
+        console.log('page next');
         if((pageNo)*pageLength<items.length){
-            setPage(pageNo + 1);
+            pageNo = pageNo+1;
+            setPage(pageNo);
             let data1 = Paginate(items, pageNo, pageLength);
             setPageData(data1);
+            console.log(items.length)
         }
 
     }
-    
+    const previousPage = () => {
+        console.log('page previous');
+        if (pageNo>0) {
+            pageNo = pageNo-1;
+            setPage(pageNo);
+            console.log('page previous number '+pageNo);
+            let data1 = Paginate(items, pageNo, pageLength);
+            setPageData(data1);
+            console.log(items.length)
+        }
+
+    }
+
     return (
         <div>
+            <div>page number {pageNo}<br></br>page length {items.length}</div>
             <Typography component="div" className={classes.tabContent}>
                 {pageData.map((item, index) => (
                     <Card className={classes.card} key={index}>
@@ -78,6 +94,11 @@ const ContentManager = withStyles(styles)(({ classes }) => {
                 <div className={classes.nextLink}>
                     <Link href="#" onClick={nextPage}>
                         Next
+                    </Link>
+                </div>
+                <div className={classes.previousLink}>
+                    <Link href="#" onClick={previousPage}>
+                        Previous
                     </Link>
                 </div>
             </Typography>

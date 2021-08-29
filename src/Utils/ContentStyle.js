@@ -35,8 +35,14 @@ export const styles = theme => ({
     },
     nextLink:{
         backgroundColor:"red",
-        width:"200px",
+        width:"100px",
         height:"30px",
         textAlign:"center"
+    },
+    previousLink: {
+        backgroundColor: "lightGreen",
+        width: "100px",
+        height: "30px",
+        textAlign: "center"
     }
 });

@@ -38,12 +38,16 @@ export const Paginate=(data,pageNumber,pageLength)=>{
 
     let startData = pageNumber*pageLength;
     let endData = startData+pageLength;
-
-    console.log('startData is %s',startData);
-    console.log('endData is %s', endData);
+    console.log('page number is %s',pageNumber);
+    console.log('page startData is %s',startData);
+    console.log('page endData is %s', endData);
  
-    console.log(' data length '+data.length);
-    console.log('sliced '+data.slice(1,3));
+   // console.log(' page data length '+data.length);
+    let dataSlice = data.slice(startData, endData);
+/*     dataSlice.map((item,index)=>(
+        console.log('page item name '+item.name)
+    ));
+ *///    console.log('page sliced ' + data.slice(startData, endData));
     return data.slice(startData, endData);
 }
 
