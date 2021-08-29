@@ -7,6 +7,7 @@ import PoemContext from '../store/poemContext';
 import { UtilConstants,fetchDbUrls, Paginate } from '../Utils/contentUtil';
 import { styles } from '../Utils/ContentStyle';
 import Link from '@material-ui/core/Link'
+import { Button, ButtonGroup } from '@material-ui/core';
 
 const ContentManager = withStyles(styles)(({ classes }) => {
 
@@ -78,7 +79,6 @@ const ContentManager = withStyles(styles)(({ classes }) => {
 
     return (
         <div>
-            <div>page number {pageNo}<br></br>page length {items.length}</div>
             <Typography component="div" className={classes.tabContent}>
                 {pageData.map((item, index) => (
                     <Card className={classes.card} key={index}>
@@ -91,16 +91,14 @@ const ContentManager = withStyles(styles)(({ classes }) => {
                         </CardContent>
                     </Card>
                 ))}
-                <div className={classes.nextLink}>
-                    <Link href="#" onClick={nextPage}>
-                        Next
-                    </Link>
-                </div>
-                <div className={classes.previousLink}>
-                    <Link href="#" onClick={previousPage}>
+                <ButtonGroup  aria-label="outlined primary button group">
+                    <Button variant="contained" color="primary" onClick={previousPage}>
                         Previous
-                    </Link>
-                </div>
+                    </Button>
+                    <Button variant="contained" color="secondary" onClick={nextPage}>
+                        Next
+                    </Button>
+                </ButtonGroup>
             </Typography>
         </div>
     )
