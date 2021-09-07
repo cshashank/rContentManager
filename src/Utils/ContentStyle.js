@@ -2,7 +2,7 @@ import React from 'react'
 
 export const styles = theme => ({
     card: {
-        width: 200,
+        width: 400,
         height: 60,
         textAlign: 'top',
         background: 'lightblue',

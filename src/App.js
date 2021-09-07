@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import PoemContext from './store/poemContext';
 import { UtilConstants } from './Utils/contentUtil';
 import { useHistory } from 'react-router-dom';
+import { Button,ButtonGroup } from '@material-ui/core';
 
 
 function App(props) {
@@ -27,7 +28,7 @@ function App(props) {
       "query": UtilConstants().MARATHI_POEM_DB_URL,
       "language": "marathi",
       "tabValue": ctxTabValue});
-      history.push('/content')
+      history.push('/marathi')
   }
   const handleEnglish = () => {
     setPCtx({
@@ -35,7 +36,7 @@ function App(props) {
       "language": "english",
       "tabValue": ctxTabValue
     });
-    history.push('/content')
+    history.push('/english')
   }
   const handleHindi = () => {
     setPCtx({
@@ -43,7 +44,7 @@ function App(props) {
       "language": "hindi",
       "tabValue": ctxTabValue
     });
-    history.push('/content')
+    history.push('/hindi')
   }
   const updateTabVal= val =>{
     ctxTabValue=val;
@@ -53,18 +54,48 @@ function App(props) {
   <PoemContext.Provider value={{pCtx, setPCtx,updateTabVal}}>
   <main>
     {/* <Navbar></Navbar> */}
-    <button type="button" onClick={handleMarathi}>
-      Marathi lit
-    </button>
-    <button type="button" onClick={handleEnglish}>
-      English lit
-    </button>
-    <button type="button" onClick={handleHindi}>
-      Hindi lit
-    </button>
+      <Button
+        style={{
+          borderRadius: 20,
+            backgroundColor: "#CB0909",
+          padding: "4px 20px",
+          fontSize: "18px"
+        }}
+        variant="contained"
+        onClick={handleMarathi}
+      >
+        Marathi
+      </Button>
+        <Button
+          style={{
+            borderRadius: 20,
+            backgroundColor: "#21c6ae",
+            padding: "4px 20px",
+            fontSize: "18px"
+          }}
+          variant="contained"
+          onClick={handleEnglish}
+        >
+          English
+        </Button>
+        <Button
+          style={{
+            borderRadius: 20,
+            backgroundColor: "#4998DF",
+            padding: "4px 20px",
+            fontSize: "18px"
+          }}
+          variant="contained"
+          onClick={handleHindi}
+        >
+          Hindi
+        </Button>
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/content" component={ContentTabs} />
+      <Route path="/marathi" component={ContentTabs} />
+      <Route path="/english" component={ContentTabs} />
+      <Route path="/hindi" component={ContentTabs} />
     </Switch>
   </main>  
     </PoemContext.Provider >
