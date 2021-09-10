@@ -32,10 +32,16 @@ export const fetchDbUrls=(language)=>{
 
     return dbUrls;
 }
+
+function custom_sort(a, b) {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+}
+
 export const Paginate=(data,pageNumber,pageLength)=>{
 //    let pageNumber = 0;
 //    let pageLength = 4;
 
+    data.sort(custom_sort);
     let startData = pageNumber*pageLength;
     let endData = startData+pageLength;
     console.log('page number is %s',pageNumber);
