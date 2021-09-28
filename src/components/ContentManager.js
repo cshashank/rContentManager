@@ -84,7 +84,7 @@ const ContentManager = withStyles(styles)(({ classes }) => {
                     <Card className={classes.card} key={index}>
                         <CardContent>
                             <Typography variant="normal" color="primary">
-                                <a target="_blank" href={item.url} rel="noreferrer">
+                                <a target="_blank" id={item.name} href={item.url} rel="noreferrer">
                                 {item.name}
                                 </a>
                             </Typography>
