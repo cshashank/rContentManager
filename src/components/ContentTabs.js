@@ -8,9 +8,14 @@ import { UtilConstants } from '../Utils/contentUtil';
 import ContentManager from './ContentManager';
 import { styles } from '../Utils/ContentStyle';
 import { useLocation } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core';
 
-const ContentTabs = withStyles(styles)(({ classes }) => {
- 
+const useStyles = makeStyles(styles);
+
+
+const ContentTabs = props => {
+    const classes = useStyles();
+
     const { pCtx, setPCtx,updateTabVal} = useContext(PoemContext);
     console.log('tPoemContext is  ' + JSON.stringify(pCtx));
 
@@ -45,5 +50,5 @@ const ContentTabs = withStyles(styles)(({ classes }) => {
             </div>
         </div>
     );
-})
+};
 export default ContentTabs;

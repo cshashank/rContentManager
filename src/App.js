@@ -9,6 +9,7 @@ import PoemContext from './store/poemContext';
 import { UtilConstants } from './Utils/contentUtil';
 import { useHistory } from 'react-router-dom';
 import { Button,ButtonGroup } from '@material-ui/core';
+import ExptComp from './components/ExptComp';
 
 
 function App(props) {
@@ -90,6 +91,7 @@ function App(props) {
         >
           Hindi
         </Button>
+        <ExptComp name="MySkcTest" />
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/content" component={ContentTabs} />
