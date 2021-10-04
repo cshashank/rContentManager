@@ -96,6 +96,7 @@ function App(props) {
       <Route path="/" component={Home} exact />
       <Route path="/content" component={ContentTabs} />
       <Route path="/marathi" component={ContentTabs} />
+      <Route path="/marathi1"> <ContentTabs plang="marathi"/> </Route>
       <Route path="/english" component={ContentTabs} />
       <Route path="/hindi" component={ContentTabs} />
     </Switch>

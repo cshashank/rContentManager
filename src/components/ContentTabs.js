@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -35,6 +34,7 @@ const ContentTabs = props => {
     return (
         <div>
             <div className={classes.root}>
+                bb{props.plang}
                 <AppBar position="static">
                     <Tabs value={value} onChange={onChange}>
                         <Tab label="Poems" />
@@ -42,10 +42,10 @@ const ContentTabs = props => {
                     </Tabs>
                 </AppBar>
                 {value === 0 && (
-                    <ContentManager ></ContentManager>
+                    <ContentManager plang={props.plang} tabValue="0" ></ContentManager>
                 )}
                 {value === 1 && (
-                    <ContentManager></ContentManager>
+                    <ContentManager plang={props.plang} tabValue="1"></ContentManager>
                 )}
             </div>
         </div>

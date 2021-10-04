@@ -8,8 +8,13 @@ import { UtilConstants,fetchDbUrls, Paginate } from '../Utils/contentUtil';
 import { styles } from '../Utils/ContentStyle';
 import Link from '@material-ui/core/Link'
 import { Button, ButtonGroup } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
-const ContentManager = withStyles(styles)(({ classes }) => {
+const useStyles = makeStyles(styles);
+
+
+const ContentManager = props => {
+    const classes = useStyles();
 
     const pageLength=8;
     let [query, setQuery] = useState(null)
@@ -22,9 +27,14 @@ const ContentManager = withStyles(styles)(({ classes }) => {
     useEffect(() => {
         console.log('in use effect marathi poems ' + query);
         console.log('context is  ' + pCtx);
+        console.log('props val is '+ props.plang);
+
+        //{ props.plang } { props.tabValue }
 
         console.log('fetchDbUrls '+fetchDbUrls("marathi").poemURL);
-        let dataURLs = fetchDbUrls(pCtx.language);
+        let dataURLs = fetchDbUrls(props.plang);
+
+        // let dataURLs = fetchDbUrls(pCtx.language);
         console.log('poemURL '+dataURLs.poemURL);
         let selectedURL="";
         if(pCtx.tabValue===0){
@@ -79,6 +89,7 @@ const ContentManager = withStyles(styles)(({ classes }) => {
 
     return (
         <div>
+            aa{props.plang}{props.tabValue}
             <Typography component="div" className={classes.tabContent}>
                 {pageData.map((item, index) => (
                     <Card className={classes.card} key={index}>
@@ -102,5 +113,5 @@ const ContentManager = withStyles(styles)(({ classes }) => {
             </Typography>
         </div>
     )
-})
+}
 export default ContentManager;
