@@ -91,14 +91,13 @@ function App(props) {
         >
           Hindi
         </Button>
-        <ExptComp name="MySkcTest" />
+        {/* <ExptComp name="MySkcTest" /> */}
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/content" component={ContentTabs} />
-      <Route path="/marathi" component={ContentTabs} />
-      <Route path="/marathi1"> <ContentTabs plang="marathi"/> </Route>
-      <Route path="/english" component={ContentTabs} />
-      <Route path="/hindi" component={ContentTabs} />
+      <Route path="/marathi"> <ContentTabs plang="marathi"/> </Route>
+      <Route path="/hindi"> <ContentTabs plang="hindi"/> </Route>
+      <Route path="/english"> <ContentTabs plang="english"/> </Route>
     </Switch>
   </main>  
     </PoemContext.Provider >

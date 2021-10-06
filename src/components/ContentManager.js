@@ -25,19 +25,13 @@ const ContentManager = props => {
     console.log('tPoemContext lang is  ' + pCtx.language);
 
     useEffect(() => {
-        console.log('in use effect marathi poems ' + query);
-        console.log('context is  ' + pCtx);
-        console.log('props val is '+ props.plang);
-
-        //{ props.plang } { props.tabValue }
 
         console.log('fetchDbUrls '+fetchDbUrls("marathi").poemURL);
         let dataURLs = fetchDbUrls(props.plang);
 
         // let dataURLs = fetchDbUrls(pCtx.language);
-        console.log('poemURL '+dataURLs.poemURL);
         let selectedURL="";
-        if(pCtx.tabValue===0){
+        if(props.tabValue==0){
             selectedURL = dataURLs.poemURL;
         }else{
             selectedURL = dataURLs.articleURL
@@ -89,7 +83,6 @@ const ContentManager = props => {
 
     return (
         <div>
-            aa{props.plang}{props.tabValue}
             <Typography component="div" className={classes.tabContent}>
                 {pageData.map((item, index) => (
                     <Card className={classes.card} key={index}>

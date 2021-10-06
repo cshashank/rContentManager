@@ -24,17 +24,18 @@ const ContentTabs = props => {
         setValue(value);
         pCtx.tabValue = value;
         setPCtx(pCtx);
+        console.log('fired onChange '+value)
         updateTabVal(value);
     };
 
     useEffect(()=>{
-        setValue(pCtx.tabValue)
+//        setValue(pCtx.tabValue)
+        onChange("e",0)
     },[pCtx])
 
     return (
         <div>
             <div className={classes.root}>
-                bb{props.plang}
                 <AppBar position="static">
                     <Tabs value={value} onChange={onChange}>
                         <Tab label="Poems" />
