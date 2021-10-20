@@ -56,7 +56,6 @@ function App(props) {
   return (
   <PoemContext.Provider value={{pCtx, setPCtx,updateTabVal}}>
   <main>
-     <Navbar></Navbar> 
       <Button
         style={{
           borderRadius: 20,
