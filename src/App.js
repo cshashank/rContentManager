@@ -10,6 +10,7 @@ import { UtilConstants } from './Utils/contentUtil';
 import { useHistory } from 'react-router-dom';
 import { Button,ButtonGroup } from '@material-ui/core';
 import ExptComp from './components/ExptComp';
+import { Link } from 'react-router-dom'
 
 
 function App(props) {
@@ -26,9 +27,10 @@ function App(props) {
   const handleMarathi = () => {
     console.log("current tab value " + ctxTabValue);
     setPCtx({ 
-      "query": UtilConstants().MARATHI_POEM_DB_URL,
-      "language": "marathi",
-      "tabValue": ctxTabValue});
+      // "query": UtilConstants().MARATHI_POEM_DB_URL,
+      // "language": "marathi",
+      // "tabValue": ctxTabValue
+    });
       history.push('/marathi')
   }
   const handleEnglish = () => {
@@ -54,7 +56,7 @@ function App(props) {
   return (
   <PoemContext.Provider value={{pCtx, setPCtx,updateTabVal}}>
   <main>
-    {/* <Navbar></Navbar> */}
+     <Navbar></Navbar> 
       <Button
         style={{
           borderRadius: 20,
