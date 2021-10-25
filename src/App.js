@@ -9,10 +9,12 @@ import PoemContext from './store/poemContext';
 import { UtilConstants } from './Utils/contentUtil';
 import { useHistory } from 'react-router-dom';
 import { Button,ButtonGroup } from '@material-ui/core';
-import ExptComp from './components/ExptComp';
-import { Link } from 'react-router-dom'
-
-
+import {  Provider,
+          createStoreHook,
+          createDispatchHook,
+          createSelectorHook
+      }  from 'react-redux';
+ 
 function App(props) {
   const Home = () => (
     <div>
@@ -53,8 +55,11 @@ function App(props) {
     ctxTabValue=val;
     console.log("tab value updated "+val)
   }
+
+  const poemStore = createStoreHook(PoemContext);
   return (
-  <PoemContext.Provider value={{pCtx, setPCtx,updateTabVal}}>
+  <PoemContext.Provider value={{pCtx, setPCtx,updateTabVal,poemStore}}>
+      {console.log('store ' + poemStore)}
   <main>
       <Button
         style={{

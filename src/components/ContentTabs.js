@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useReducer } from 'react'
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -8,6 +8,7 @@ import ContentManager from './ContentManager';
 import { styles } from '../Utils/ContentStyle';
 import { useLocation } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
+import { PoemReducer } from '../reducers/mPoemReducer';
 
 const useStyles = makeStyles(styles);
 
@@ -20,13 +21,26 @@ const ContentTabs = props => {
 
     const [value, setValue] = useState(0);
 
+    const initState={
+        redPoemState: "redPoem1",
+        redPoemURL: "redURL"
+    }
+
+    const [redState,dispatch] = useReducer(PoemReducer,initState);
+
     const onChange = (e, value) => {
+        console.log('b4 redux');
+        dispatch({
+            type:"MARATHI_POEM",
+            payload: value
+        });
+/*         
         setValue(value);
         pCtx.tabValue = value;
         setPCtx(pCtx);
-        console.log('fired onChange '+value)
+        console.log('fired12 onChange '+value)
         updateTabVal(value);
-    };
+ */    };
 
     useEffect(()=>{
 //        setValue(pCtx.tabValue)
