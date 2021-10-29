@@ -11,7 +11,8 @@ import { useHistory } from 'react-router-dom';
 import { Button,ButtonGroup } from '@material-ui/core';
 import ExptComp from './components/ExptComp';
 import { Link } from 'react-router-dom'
-
+import { Provider } from "react-redux";
+import { store } from './store/store'
 
 function App(props) {
   const Home = () => (
@@ -54,7 +55,7 @@ function App(props) {
     console.log("tab value updated "+val)
   }
   return (
-  <PoemContext.Provider value={{pCtx, setPCtx,updateTabVal}}>
+  <Provider store={store}>
   <main>
       <Button
         style={{
@@ -101,7 +102,7 @@ function App(props) {
       <Route path="/english"> <ContentTabs plang="english"/> </Route>
     </Switch>
   </main>  
-    </PoemContext.Provider >
+    </Provider >
   );
 }
 

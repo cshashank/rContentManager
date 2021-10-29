@@ -9,6 +9,8 @@ import { styles } from '../Utils/ContentStyle';
 import Link from '@material-ui/core/Link'
 import { Button, ButtonGroup } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import { addPoems } from '../slices/poemSlice';
 
 const useStyles = makeStyles(styles);
 
@@ -23,6 +25,8 @@ const ContentManager = props => {
     let [pageNo, setPage] = useState(0)
     const { pCtx, setPCtx } = useContext(PoemContext);
     console.log('tPoemContext lang is  ' + pCtx.language);
+
+    const dispatch = useDispatch(); 
 
     useEffect(() => {
 
@@ -51,6 +55,7 @@ const ContentManager = props => {
                 setItems(data);
                 let data1 = Paginate(data, 0, pageLength);
                 setPageData(data1);
+                dispatch(addPoems(data1));
 //                setPage(pageNo + 1)
                 console.log(' setting data  ' + JSON.stringify(data))
             });

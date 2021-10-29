@@ -15,23 +15,19 @@ const useStyles = makeStyles(styles);
 const ContentTabs = props => {
     const classes = useStyles();
 
-    const { pCtx, setPCtx,updateTabVal} = useContext(PoemContext);
-    console.log('tPoemContext is  ' + JSON.stringify(pCtx));
 
     const [value, setValue] = useState(0);
 
     const onChange = (e, value) => {
         setValue(value);
-        pCtx.tabValue = value;
-        setPCtx(pCtx);
         console.log('fired onChange '+value)
-        updateTabVal(value);
+//        updateTabVal(value);
     };
 
     useEffect(()=>{
 //        setValue(pCtx.tabValue)
         onChange("e",0)
-    },[pCtx])
+    },[])
 
     return (
         <div>
@@ -43,10 +39,12 @@ const ContentTabs = props => {
                     </Tabs>
                 </AppBar>
                 {value === 0 && (
-                    <ContentManager plang={props.plang} tabValue="0" ></ContentManager>
+                        "Tab 0"
+                    // <ContentManager plang={props.plang} tabValue="0" ></ContentManager>
                 )}
                 {value === 1 && (
-                    <ContentManager plang={props.plang} tabValue="1"></ContentManager>
+                        "Tab 1"
+                    // <ContentManager plang={props.plang} tabValue="1"></ContentManager>
                 )}
             </div>
         </div>
