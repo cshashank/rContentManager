@@ -11,8 +11,9 @@ import { useHistory } from 'react-router-dom';
 import { Button,ButtonGroup } from '@material-ui/core';
 import ExptComp from './components/ExptComp';
 import { Link } from 'react-router-dom'
-import { Provider } from "react-redux";
+import { Provider,useSelector, useDispatch } from "react-redux";
 import { store } from './store/store'
+import { RootState } from './store/store'
 
 function App(props) {
   const Home = () => (
@@ -54,6 +55,11 @@ function App(props) {
     ctxTabValue=val;
     console.log("tab value updated "+val)
   }
+
+  //const poem = useSelector((state)=>state.PoemState.value);
+
+  //const dispatch = useDispatch()
+
   return (
   <Provider store={store}>
   <main>
@@ -102,7 +108,7 @@ function App(props) {
       <Route path="/english"> <ContentTabs plang="english"/> </Route>
     </Switch>
   </main>  
-    </Provider >
+    </Provider>
   );
 }
 

@@ -8,11 +8,17 @@ import ContentManager from './ContentManager';
 import { styles } from '../Utils/ContentStyle';
 import { useLocation } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
-
+import { store } from '../store/store';
+import { RootState } from '../store/store';
+import { useSelector,useDispatch } from 'react-redux';
 const useStyles = makeStyles(styles);
 
 
 const ContentTabs = props => {
+
+    const tPoem = useSelector((state)=>state.poems.value);
+    const dispatch = useDispatch();
+    console.log('redux '+tPoem);
     const classes = useStyles();
 
 
@@ -23,6 +29,8 @@ const ContentTabs = props => {
         console.log('fired onChange '+value)
 //        updateTabVal(value);
     };
+
+
 
     useEffect(()=>{
 //        setValue(pCtx.tabValue)
@@ -39,7 +47,7 @@ const ContentTabs = props => {
                     </Tabs>
                 </AppBar>
                 {value === 0 && (
-                        "Tab 0"
+                        tPoem
                     // <ContentManager plang={props.plang} tabValue="0" ></ContentManager>
                 )}
                 {value === 1 && (
