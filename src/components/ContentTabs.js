@@ -7,11 +7,15 @@ import { makeStyles } from '@material-ui/core';
 import { useSelector,useDispatch } from 'react-redux';
 import { selectTab } from '../slices/poemSlice';
 import ContentManager from './ContentManager';
+import { useParams } from 'react-router-dom';
 
 const useStyles = makeStyles(styles);
 
 
 const ContentTabs = props => {
+
+    const { qLang } = useParams();
+    console.log('url param is '+qLang);
 
     const tPoem = useSelector((state)=>state.poems.selectedTab);
     const dispatch = useDispatch();

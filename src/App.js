@@ -1,19 +1,12 @@
-import logo from './logo.svg';
 import React, { useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter,Link, Route, Switch } from 'react-router-dom';
 import './App.css';
 import ContentTabs from './components/ContentTabs';
-import EnglishPoems from './components/EnglishPoems';
-import Navbar from './components/Navbar'
-import PoemContext from './store/poemContext';
 import { UtilConstants } from './Utils/contentUtil';
 import { useHistory } from 'react-router-dom';
 import { Button,ButtonGroup } from '@material-ui/core';
-import ExptComp from './components/ExptComp';
-import { Link } from 'react-router-dom'
-import { Provider,useSelector, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 import { store } from './store/store'
-import { RootState } from './store/store'
 
 function App(props) {
   const Home = () => (
@@ -28,11 +21,6 @@ function App(props) {
   let ctxTabValue=0;
   const handleMarathi = () => {
     console.log("current tab value " + ctxTabValue);
-    setPCtx({ 
-      // "query": UtilConstants().MARATHI_POEM_DB_URL,
-      // "language": "marathi",
-      // "tabValue": ctxTabValue
-    });
       history.push('/marathi')
   }
   const handleEnglish = () => {
@@ -99,13 +87,14 @@ function App(props) {
         >
           Hindi
         </Button>
-        {/* <ExptComp name="MySkcTest" /> */}
+        <Link to="/marathi">Marathi</Link>
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/content" component={ContentTabs} />
       <Route path="/marathi"> <ContentTabs plang="marathi"/> </Route>
       <Route path="/hindi"> <ContentTabs plang="hindi"/> </Route>
       <Route path="/english"> <ContentTabs plang="english"/> </Route>
+      <Route path="/content/:id" element={<ContentTabs plang="english"/>}/>
     </Switch>
   </main>  
     </Provider>
