@@ -1,19 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState  = {
-    value: "poem1",
+    selectedTab: "0",
+    poemPage: [],
 }
 
 const poemSlice = createSlice({
     name:"poems",
     initialState,
     reducers:{
-        addPoems:(state,action) =>{
-            state.value = action.payload;
+        selectTab:(state,action) =>{
+            state.selectedTab = action.payload;
+        },
+        addPoemsPage: (state, action) => {
+            state.poemPage = action.payload;
         }
     },
 })
 
-export const {addPoems} = poemSlice.actions;
+export const {selectTab,addPoemsPage} = poemSlice.actions;
 export default poemSlice.reducer;
-export { poemSlice };

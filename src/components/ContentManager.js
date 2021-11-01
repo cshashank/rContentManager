@@ -9,8 +9,8 @@ import { styles } from '../Utils/ContentStyle';
 import Link from '@material-ui/core/Link'
 import { Button, ButtonGroup } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
-import { addPoems } from '../slices/poemSlice';
+import { useSelector,useDispatch } from 'react-redux';
+import { addPoemsPage } from '../slices/poemSlice';
 
 const useStyles = makeStyles(styles);
 
@@ -18,15 +18,15 @@ const useStyles = makeStyles(styles);
 const ContentManager = props => {
     const classes = useStyles();
 
-    const pageLength=8;
-    let [query, setQuery] = useState(null)
-    const [items, setItems] = useState([{}])
-    const [pageData,setPageData]= useState([{}])
-    let [pageNo, setPage] = useState(0)
-    const { pCtx, setPCtx } = useContext(PoemContext);
-    console.log('tPoemContext lang is  ' + pCtx.language);
+    const pageData = useSelector((state) => state.poems.poemPage);
+    const dispatch = useDispatch();
+    console.log('redux cm ' + pageData)
 
-    const dispatch = useDispatch(); 
+    const pageLength=8;
+    const [items, setItems] = useState([{}])
+    const [pageData1,setPageData]= useState([{}])
+    let [pageNo, setPage] = useState(0)
+
 
     useEffect(() => {
 
@@ -55,11 +55,11 @@ const ContentManager = props => {
                 setItems(data);
                 let data1 = Paginate(data, 0, pageLength);
                 setPageData(data1);
-                dispatch(addPoems(data1));
+                dispatch(addPoemsPage(data1));
 //                setPage(pageNo + 1)
                 console.log(' setting data  ' + JSON.stringify(data))
             });
-    }, [query,pCtx]);
+    }, []);
 
 
     const nextPage = () =>{
@@ -68,7 +68,8 @@ const ContentManager = props => {
             pageNo = pageNo+1;
             setPage(pageNo);
             let data1 = Paginate(items, pageNo, pageLength);
-            setPageData(data1);
+//            setPageData(data1);
+            dispatch(addPoemsPage(data1));
             console.log(items.length)
         }
 
@@ -80,7 +81,8 @@ const ContentManager = props => {
             setPage(pageNo);
             console.log('page previous number '+pageNo);
             let data1 = Paginate(items, pageNo, pageLength);
-            setPageData(data1);
+//            setPageData(data1);
+            dispatch(addPoemsPage(data1));
             console.log(items.length)
         }
 
