@@ -11,6 +11,9 @@ import { Button, ButtonGroup } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import { useSelector,useDispatch } from 'react-redux';
 import { addPoemsPage } from '../slices/poemSlice';
+import { useParams } from 'react-router-dom';
+import { setPoemLanguage } from '../slices/poemSlice';
+
 
 const useStyles = makeStyles(styles);
 
@@ -18,9 +21,20 @@ const useStyles = makeStyles(styles);
 const ContentManager = props => {
     const classes = useStyles();
 
+    let { qLang } = useParams();
+
+    console.log('url param is ' + qLang);
+
     const pageData = useSelector((state) => state.poems.poemPage);
+    const poemLanguage = useSelector((state) => state.poems.plang);
+    const rSeletedTab = useSelector((state) => state.poems.selectedTab);
+
     const dispatch = useDispatch();
     console.log('redux cm ' + pageData)
+    console.log('redux cm ' + poemLanguage)
+    console.log('redux cm ' + rSeletedTab)
+
+    dispatch(setPoemLanguage(qLang));
 
     const pageLength=8;
     const [items, setItems] = useState([{}])
@@ -30,8 +44,10 @@ const ContentManager = props => {
 
     useEffect(() => {
 
+        console.log('url param ue '+poemLanguage);
+
         console.log('fetchDbUrls '+fetchDbUrls("marathi").poemURL);
-        let dataURLs = fetchDbUrls(props.plang);
+        let dataURLs = fetchDbUrls(qLang);
 
         // let dataURLs = fetchDbUrls(pCtx.language);
         let selectedURL="";
@@ -59,7 +75,7 @@ const ContentManager = props => {
 //                setPage(pageNo + 1)
                 console.log(' setting data  ' + JSON.stringify(data))
             });
-    }, []);
+    }, [rSeletedTab, qLang]);
 
 
     const nextPage = () =>{

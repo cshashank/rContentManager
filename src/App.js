@@ -94,7 +94,7 @@ function App(props) {
       <Route path="/marathi"> <ContentTabs plang="marathi"/> </Route>
       <Route path="/hindi"> <ContentTabs plang="hindi"/> </Route>
       <Route path="/english"> <ContentTabs plang="english"/> </Route>
-      <Route path="/content/:id" element={<ContentTabs plang="english"/>}/>
+      <Route path="/content1/:qLang/:cType/"> <ContentTabs /></Route>
     </Switch>
   </main>  
     </Provider>
