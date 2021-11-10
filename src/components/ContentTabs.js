@@ -1,59 +1,61 @@
-import React, {useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { styles } from '../Utils/ContentStyle';
 import { makeStyles } from '@material-ui/core';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { selectTab } from '../slices/poemSlice';
 import ContentManager from './ContentManager';
 import { useParams } from 'react-router-dom';
 import { setPoemLanguage } from '../slices/poemSlice';
-
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 const useStyles = makeStyles(styles);
 
 const ContentTabs = props => {
 
-    let  {qLang} = useParams();
+    let { qLang } = useParams();
     let { cType } = useParams();
+    const [value, setValue] = useState(0);
 
-    console.log('url param is '+qLang);
+    console.log('url param is ' + qLang);
     console.log('url param is ' + cType);
 
-    const tPoem = useSelector((state)=>state.poems.selectedTab);
+    const tPoem = useSelector((state) => state.poems.selectedTab);
     const dispatch = useDispatch();
-    console.log('redux '+JSON.stringify(tPoem));
+    console.log('redux ' + JSON.stringify(tPoem));
     const classes = useStyles();
     dispatch(setPoemLanguage(qLang));
 
     const onChange = (e, value) => {
         dispatch(selectTab(value));
-        console.log('fired onChange '+value)
+        console.log('fired onChange ' + value)
     };
 
     useEffect(() => {
-        console.log('url param ue '+qLang);
+        console.log('url param ue ' + qLang);
         dispatch(selectTab("0"));
         dispatch(setPoemLanguage(qLang));
+        onChange({}, "test0");
     }, [])
 
     return (
         <div>
             {qLang}
-            <div className={classes.root}>
-                <AppBar position="static">
-                    <Tabs value={tPoem} onChange={onChange}>
-                        <Tab label="Poems" />
-                        <Tab label="Articles" />
-                    </Tabs>
-                </AppBar>
-                {tPoem === 0 && (
-                     <ContentManager plang={qLang} tabValue="0" ></ContentManager>
-                )}
-                {tPoem === 1 && (
-                     <ContentManager plang={props.plang} tabValue="1"></ContentManager>
-                )}
-            </div>
+            <AppBar position="static">
+                <Toolbar variant="dense">
+                    <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                        {/* <MenuIcon /> */}
+                    </IconButton>
+                    <Typography variant="h6" color="inherit" component="div">
+                        Poems
+                    </Typography>
+                </Toolbar>
+            </AppBar>
         </div>
     );
 };
