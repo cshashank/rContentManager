@@ -14,9 +14,15 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import { Button, ButtonGroup } from '@material-ui/core';
+
+
 const useStyles = makeStyles(styles);
 
 const ContentTabs = props => {
+
 
     let { qLang } = useParams();
     let { cType } = useParams();
@@ -51,8 +57,20 @@ const ContentTabs = props => {
                     <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         {/* <MenuIcon /> */}
                     </IconButton>
-                    <Typography variant="h6" color="inherit" component="div">
-                        Poems
+                    <Typography className={classes.enabledMenu}>
+                        <span> Poems </span>
+                        <span>Abcd</span>
+                        <Button
+                            style={{
+                                borderRadius: 20,
+                                backgroundColor: "#21c6ae",
+                                padding: "4px 20px",
+                                fontSize: "18px"
+                            }}
+                            variant="contained"
+                        >
+                            English
+                        </Button>
                     </Typography>
                 </Toolbar>
             </AppBar>

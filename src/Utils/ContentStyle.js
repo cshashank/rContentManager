@@ -44,5 +44,15 @@ export const styles = theme => ({
         width: "100px",
         height: "30px",
         textAlign: "center"
+    },
+    enabledMenu: {
+        variant:"h6" ,
+        color:"white",
+        component:"div"
+    },
+    disabledMenu: {
+        variant: "h6",
+        color: "green",
+        component: "div"
     }
 });
