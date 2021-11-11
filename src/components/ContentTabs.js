@@ -65,15 +65,16 @@ const ContentTabs = props => {
                                 borderRadius: 20,
                                 backgroundColor: "#21c6ae",
                                 padding: "4px 20px",
-                                fontSize: "18px"
+                                fontSize: "18px",
+                                cursor: "not-allowed"
                             }}
-                            variant="contained"
-                        >
+                            variant="contained"                        >
                             English
                         </Button>
                     </Typography>
                 </Toolbar>
             </AppBar>
+            <ContentManager/>
         </div>
     );
 };

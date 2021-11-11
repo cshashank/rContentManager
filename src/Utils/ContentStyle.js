@@ -50,9 +50,11 @@ export const styles = theme => ({
         color:"white",
         component:"div"
     },
-    disabledMenu: {
-        variant: "h6",
-        color: "green",
-        component: "div"
+    disabledButton: {
+        borderRadius: 20,
+        backgroundColor: "#21c6ae",
+        padding: "4px 20px",
+        fontSize: "18px",
+        cursor: "not-allowed"
     }
 });
