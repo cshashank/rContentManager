@@ -52,6 +52,13 @@ export const styles = theme => ({
     },
     disabledButton: {
         borderRadius: 20,
+        backgroundColor: "#1277ae",
+        padding: "4px 20px",
+        fontSize: "18px",
+        cursor: "not-allowed"
+    },
+    enabledButton: {
+        borderRadius: 20,
         backgroundColor: "#21c6ae",
         padding: "4px 20px",
         fontSize: "18px",

@@ -17,7 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { Button, ButtonGroup } from '@material-ui/core';
-
+import { AppBarButtons } from './AppBarButtons';
 
 const useStyles = makeStyles(styles);
 
@@ -51,6 +51,7 @@ const ContentTabs = props => {
 
     return (
         <div>
+            <AppBarButtons/>
             {qLang}
             <AppBar position="static">
                 <Toolbar variant="dense">
@@ -61,14 +62,9 @@ const ContentTabs = props => {
                         <span> Poems </span>
                         <span>Abcd</span>
                         <Button
-                            style={{
-                                borderRadius: 20,
-                                backgroundColor: "#21c6ae",
-                                padding: "4px 20px",
-                                fontSize: "18px",
-                                cursor: "not-allowed"
-                            }}
-                            variant="contained"                        >
+                            className={classes.disabledButton}
+                            variant="contained"  
+                            name="btnEnglish"                      >
                             English
                         </Button>
                     </Typography>
