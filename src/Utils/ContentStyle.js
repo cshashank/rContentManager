@@ -62,6 +62,7 @@ export const styles = theme => ({
         backgroundColor: "#21c6ae",
         padding: "4px 20px",
         fontSize: "18px",
-        cursor: "not-allowed"
+        cursor: "not-allowed",
+        margin: 10
     }
 });

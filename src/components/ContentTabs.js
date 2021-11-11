@@ -51,7 +51,6 @@ const ContentTabs = props => {
 
     return (
         <div>
-            <AppBarButtons/>
             {qLang}
             <AppBar position="static">
                 <Toolbar variant="dense">
@@ -59,14 +58,7 @@ const ContentTabs = props => {
                         {/* <MenuIcon /> */}
                     </IconButton>
                     <Typography className={classes.enabledMenu}>
-                        <span> Poems </span>
-                        <span>Abcd</span>
-                        <Button
-                            className={classes.disabledButton}
-                            variant="contained"  
-                            name="btnEnglish"                      >
-                            English
-                        </Button>
+                        <AppBarButtons />
                     </Typography>
                 </Toolbar>
             </AppBar>
