@@ -4,6 +4,17 @@ const initialState  = {
     selectedTab: "0",
     poemPage: [],
     plang:"marathi",
+    features:[{
+        "feature": 'poem',
+        "active": true
+    }, {
+        "feature": 'article',
+        "active": false
+    }, {
+        "feature": 'video',
+        "active": false
+    }]
+
 }
 
 const poemSlice = createSlice({

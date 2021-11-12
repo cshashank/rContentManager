@@ -55,14 +55,14 @@ export const styles = theme => ({
         backgroundColor: "#1277ae",
         padding: "4px 20px",
         fontSize: "18px",
-        cursor: "not-allowed"
+        cursor: "not-allowed",
+        margin: 10
     },
     enabledButton: {
         borderRadius: 20,
         backgroundColor: "#21c6ae",
         padding: "4px 20px",
         fontSize: "18px",
-        cursor: "not-allowed",
         margin: 10
     }
 });

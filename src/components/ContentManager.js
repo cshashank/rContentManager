@@ -75,7 +75,7 @@ const ContentManager = props => {
 //                setPage(pageNo + 1)
                 console.log(' setting data  ' + JSON.stringify(data))
             });
-    }, [rSeletedTab, qLang]);
+    }, [ qLang ]);
 
 
     const nextPage = () =>{

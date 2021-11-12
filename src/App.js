@@ -88,6 +88,7 @@ function App(props) {
           Hindi
         </Button>
         <Link to="/content1/lang1/poem1">Marathi</Link>
+        <Link to="/content1/lang2/poem1">English</Link>
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/content" component={ContentTabs} />

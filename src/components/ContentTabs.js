@@ -47,7 +47,7 @@ const ContentTabs = props => {
         dispatch(selectTab("0"));
         dispatch(setPoemLanguage(qLang));
         onChange({}, "test0");
-    }, [])
+    }, [qLang])
 
     return (
         <div>
