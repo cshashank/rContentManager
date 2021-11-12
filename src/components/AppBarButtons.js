@@ -23,7 +23,7 @@ export const AppBarButtons = () => {
         <div>
             {tempButtons.map((item, index) => (
                 <Button 
-                    className={classes.enabledButton}
+                    className={item.active? classes.enabledButton:classes.disabledButton}
                     id={item.feature}
                     name={item.feature}                      >
                     {item.feature}
