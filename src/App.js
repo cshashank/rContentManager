@@ -19,30 +19,6 @@ function App(props) {
   const [pCtx, setPCtx] = useState({})
   const history = useHistory();
   let ctxTabValue=0;
-  const handleMarathi = () => {
-    console.log("current tab value " + ctxTabValue);
-      history.push('/marathi')
-  }
-  const handleEnglish = () => {
-    setPCtx({
-      "query": UtilConstants().MARATHI_POEM_DB_URL,
-      "language": "english",
-      "tabValue": ctxTabValue
-    });
-    history.push('/english')
-  }
-  const handleHindi = () => {
-    setPCtx({
-      "query": UtilConstants().MARATHI_POEM_DB_URL,
-      "language": "hindi",
-      "tabValue": ctxTabValue
-    });
-    history.push('/hindi')
-  }
-  const updateTabVal= val =>{
-    ctxTabValue=val;
-    console.log("tab value updated "+val)
-  }
 
   //const poem = useSelector((state)=>state.PoemState.value);
 
@@ -51,44 +27,9 @@ function App(props) {
   return (
   <Provider store={store}>
   <main>
-      <Button
-        style={{
-          borderRadius: 20,
-            backgroundColor: "#CB0909",
-          padding: "4px 20px",
-          fontSize: "18px"
-        }}
-        variant="contained"
-        onClick={handleMarathi}
-      >
-        Marathi
-      </Button>
-        <Button
-          style={{
-            borderRadius: 20,
-            backgroundColor: "#21c6ae",
-            padding: "4px 20px",
-            fontSize: "18px"
-          }}
-          variant="contained"
-          onClick={handleEnglish}
-        >
-          English
-        </Button>
-        <Button
-          style={{
-            borderRadius: 20,
-            backgroundColor: "#4998DF",
-            padding: "4px 20px",
-            fontSize: "18px"
-          }}
-          variant="contained"
-          onClick={handleHindi}
-        >
-          Hindi
-        </Button>
-        <Link to="/content1/lang1/poem1">Marathi</Link>
-        <Link to="/content1/lang2/poem1">English</Link>
+
+        <Link to="/content1/marathi/poem">Marathi</Link>
+        <Link to="/content1/english/poem">English</Link>
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/content" component={ContentTabs} />
