@@ -4,16 +4,7 @@ const initialState  = {
     selectedTab: "0",
     poemPage: [],
     plang:"marathi",
-    features:[{
-        "feature": 'poem',
-        "active": true
-    }, {
-        "feature": 'article',
-        "active": false
-    }, {
-        "feature": 'video',
-        "active": false
-    }]
+    feature:"poem"
 
 }
 
@@ -28,12 +19,14 @@ const poemSlice = createSlice({
         addPoemsPage: (state, action) => {
             state.poemPage = action.payload;
         },
-        setPoemLanguage: (state,action) => {
-            console.log('in setPoemLanguage '+action.payload);;
+        setLanguage: (state,action) => {
             state.plang=action.payload;
+        },
+        setFeature:(state,action)=>{
+            state.feature=action.payload;
         }
     },
 })
 
-export const {selectTab,addPoemsPage,setPoemLanguage} = poemSlice.actions;
+export const rActions = poemSlice.actions;
 export default poemSlice.reducer;

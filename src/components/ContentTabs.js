@@ -5,10 +5,9 @@ import Tab from '@material-ui/core/Tab';
 import { styles } from '../Utils/ContentStyle';
 import { makeStyles } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectTab } from '../slices/poemSlice';
+import { rActions } from '../slices/poemSlice';
 import ContentManager from './ContentManager';
 import { useParams } from 'react-router-dom';
-import { setPoemLanguage } from '../slices/poemSlice';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -25,29 +24,30 @@ const ContentTabs = props => {
 
 
     let { qLang } = useParams();
-    let { cType } = useParams();
+    let { qFeature } = useParams();
     const [value, setValue] = useState(0);
 
     console.log('url param is ' + qLang);
-    console.log('url param is ' + cType);
+    console.log('url param is ' + qFeature);
 
     const tPoem = useSelector((state) => state.poems.selectedTab);
     const dispatch = useDispatch();
     console.log('redux ' + JSON.stringify(tPoem));
     const classes = useStyles();
-    dispatch(setPoemLanguage(qLang));
+    dispatch(rActions.setLanguage(qLang));
 
     const onChange = (e, value) => {
-        dispatch(selectTab(value));
+        dispatch(rActions.selectTab(value));
         console.log('fired onChange ' + value)
     };
 
     useEffect(() => {
         console.log('url param ue ' + qLang);
-        dispatch(selectTab("0"));
-        dispatch(setPoemLanguage(qLang));
+        dispatch(rActions.selectTab("0"));
+        dispatch(rActions.setLanguage(qLang));
+        dispatch(rActions.setFeature(qFeature));
         onChange({}, "test0");
-    }, [qLang])
+    }, [qLang,qFeature])
 
     return (
         <div>

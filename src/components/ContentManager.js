@@ -10,10 +10,8 @@ import Link from '@material-ui/core/Link'
 import { Button, ButtonGroup } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import { useSelector,useDispatch } from 'react-redux';
-import { addPoemsPage } from '../slices/poemSlice';
 import { useParams } from 'react-router-dom';
-import { setPoemLanguage } from '../slices/poemSlice';
-
+import { rActions } from '../slices/poemSlice';
 
 const useStyles = makeStyles(styles);
 
@@ -34,7 +32,7 @@ const ContentManager = props => {
     console.log('redux cm ' + poemLanguage)
     console.log('redux cm ' + rSeletedTab)
 
-    dispatch(setPoemLanguage(qLang));
+    dispatch(rActions.setLanguage(qLang));
 
     const pageLength=8;
     const [items, setItems] = useState([{}])
@@ -71,7 +69,7 @@ const ContentManager = props => {
                 setItems(data);
                 let data1 = Paginate(data, 0, pageLength);
                 setPageData(data1);
-                dispatch(addPoemsPage(data1));
+                dispatch(rActions.addPoemsPage(data1));
 //                setPage(pageNo + 1)
                 console.log(' setting data  ' + JSON.stringify(data))
             });
@@ -85,7 +83,7 @@ const ContentManager = props => {
             setPage(pageNo);
             let data1 = Paginate(items, pageNo, pageLength);
 //            setPageData(data1);
-            dispatch(addPoemsPage(data1));
+            dispatch(rActions.addPoemsPage(data1));
             console.log(items.length)
         }
 
@@ -98,7 +96,7 @@ const ContentManager = props => {
             console.log('page previous number '+pageNo);
             let data1 = Paginate(items, pageNo, pageLength);
 //            setPageData(data1);
-            dispatch(addPoemsPage(data1));
+            dispatch(rActions.addPoemsPage(data1));
             console.log(items.length)
         }
 
