@@ -45,6 +45,14 @@ export const styles = theme => ({
         height: "30px",
         textAlign: "center"
     },
+    menuLink: {
+        color: "white",
+        width: "100px",
+        height: "30px",
+        textAlign: "center",
+        textDecoration:"underline white",
+        margin: 10
+    },
     enabledMenu: {
         variant:"h6" ,
         color:"white",
@@ -64,5 +72,11 @@ export const styles = theme => ({
         padding: "4px 20px",
         fontSize: "18px",
         margin: 10
+    },
+    hideListItem:{
+        color:"red",
+        invisible: {
+            visibility: "hidden"
+        },
     }
 });

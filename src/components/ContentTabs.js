@@ -7,62 +7,51 @@ import { makeStyles } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { rActions } from '../slices/poemSlice';
 import ContentManager from './ContentManager';
-import { useParams } from 'react-router-dom';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-import { Button, ButtonGroup } from '@material-ui/core';
 import { AppBarButtons } from './AppBarButtons';
+import List from '@mui/material/List';
+import { ListItemButton, ListItemText } from '@mui/material';
 
 const useStyles = makeStyles(styles);
 
 const ContentTabs = props => {
 
-
-    let { qLang } = useParams();
-    let { qFeature } = useParams();
-    const [value, setValue] = useState(0);
-
-    console.log('url param is ' + qLang);
-    console.log('url param is ' + qFeature);
-
-    const tPoem = useSelector((state) => state.poems.selectedTab);
-    const dispatch = useDispatch();
-    console.log('redux ' + JSON.stringify(tPoem));
     const classes = useStyles();
-    dispatch(rActions.setLanguage(qLang));
 
-    const onChange = (e, value) => {
-        dispatch(rActions.selectTab(value));
-        console.log('fired onChange ' + value)
-    };
-
-    useEffect(() => {
-        console.log('url param ue ' + qLang);
-        dispatch(rActions.selectTab("0"));
-        dispatch(rActions.setLanguage(qLang));
-        dispatch(rActions.setFeature(qFeature));
-        onChange({}, "test0");
-    }, [qLang,qFeature])
+    const [navbarOpen, setNavbarOpen] = useState(false)
+    const handleToggle = () => {
+        console.log('menu info ');
+        setNavbarOpen(prev => !prev)
+    }
 
     return (
         <div>
-            {qLang}
             <AppBar position="static">
                 <Toolbar variant="dense">
                     <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                        {/* <MenuIcon /> */}
+                        <List>
+                            <ListItemButton component="a" href="#simple-list">
+                                <MenuIcon onClick={handleToggle}/>
+                            </ListItemButton>
+                            <ListItemButton onClick={handleToggle} 
+                                className={classes.hideListItem} 
+                                component="a" href="#simple-list">
+                                <ListItemText primary="Marathi" />
+                            </ListItemButton>
+                            <ListItemButton component="a" href="#simple-list">
+                                <ListItemText primary="English" />
+                            </ListItemButton>
+                        </List>
                     </IconButton>
                     <Typography className={classes.enabledMenu}>
                         <AppBarButtons />
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <ContentManager/>
+            <ContentManager />
         </div>
     );
 };
