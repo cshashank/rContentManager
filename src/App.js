@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { Button, ButtonGroup } from '@material-ui/core';
 import { Provider } from "react-redux";
 import { store } from './store/store'
+import { Drawer } from './components/Drawer';
 
 function App(props) {
   const Home = () => (
@@ -23,6 +24,7 @@ function App(props) {
 
         <Link to="/content1/marathi/poem">Marathi</Link>
         <Link to="/content1/english/poem">English</Link>
+        <Drawer/>
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/content1" component={ContentTabs} />
