@@ -4,8 +4,8 @@ const initialState  = {
     selectedTab: "0",
     poemPage: [],
     plang:"marathi",
-    feature:"poem"
-
+    feature:"poem",
+    drawerOpen:false
 }
 
 const poemSlice = createSlice({
@@ -24,6 +24,9 @@ const poemSlice = createSlice({
         },
         setFeature:(state,action)=>{
             state.feature=action.payload;
+        },
+        toggleDrawer:(state,action)=>{
+            state.drawerOpen=action.payload;
         }
     },
 })

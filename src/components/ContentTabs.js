@@ -17,6 +17,7 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { Button, ButtonGroup } from '@material-ui/core';
 import { AppBarButtons } from './AppBarButtons';
+import {Drawer} from './Drawer'
 
 const useStyles = makeStyles(styles);
 
@@ -49,14 +50,20 @@ const ContentTabs = props => {
         onChange({}, "test0");
     }, [qLang,qFeature])
 
+    const menuClick=()=>{
+        console.log('menu click');
+        dispatch(rActions.toggleDrawer(true));
+    }
+
     return (
         <div>
             {qLang}
             <AppBar position="static">
                 <Toolbar variant="dense">
                     <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                        {/* <MenuIcon /> */}
+                        <MenuIcon onClick={menuClick}/>
                     </IconButton>
+                    <Drawer />
                     <Typography className={classes.enabledMenu}>
                         <AppBarButtons />
                     </Typography>
