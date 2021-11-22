@@ -13,8 +13,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 import { Button, ButtonGroup } from '@material-ui/core';
 import { AppBarButtons } from './AppBarButtons';
 import {Drawer} from './Drawer'
@@ -35,7 +33,7 @@ const ContentTabs = props => {
     const dispatch = useDispatch();
     console.log('redux ' + JSON.stringify(tPoem));
     const classes = useStyles();
-    dispatch(rActions.setLanguage(qLang));
+    //dispatch(rActions.setLanguage(qLang));
 
     const onChange = (e, value) => {
         dispatch(rActions.selectTab(value));
@@ -45,13 +43,12 @@ const ContentTabs = props => {
     useEffect(() => {
         console.log('url param ue ' + qLang);
         dispatch(rActions.selectTab("0"));
-        dispatch(rActions.setLanguage(qLang));
+    //    dispatch(rActions.setLanguage(qLang));
         dispatch(rActions.setFeature(qFeature));
         onChange({}, "test0");
     }, [qLang,qFeature])
 
     const menuClick=()=>{
-        console.log('menu click');
         dispatch(rActions.toggleDrawer(true));
     }
 
@@ -63,11 +60,13 @@ const ContentTabs = props => {
                     <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <MenuIcon onClick={menuClick}/>
                     </IconButton>
-                    <Drawer />
                     <Typography className={classes.enabledMenu}>
                         <AppBarButtons />
                     </Typography>
                 </Toolbar>
+                <div>
+                    <Drawer />
+                </div>
             </AppBar>
             <ContentManager/>
         </div>

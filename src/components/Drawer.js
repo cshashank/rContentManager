@@ -15,9 +15,9 @@ export const Drawer = () => {
     console.log('drawerState is '+drawerState)
     const dispatch = useDispatch();
 
-    const drawerClick = () => {
-        console.log('menu click');
-        dispatch(rActions.toggleDrawer(false));
+    const drawerClick = (drawerLanguage) => {
+       dispatch(rActions.toggleDrawer(false));
+    dispatch(rActions.setLanguage(drawerLanguage));
     }
 
     return (
@@ -25,7 +25,8 @@ export const Drawer = () => {
             <MUIDrawer open={drawerState} >
                 <List>
                     {['Marathi','English','Hindi'].map((text,index)=>(
-                        <ListItem button key={text} onClick={drawerClick}>
+                        <ListItem button key={text} 
+                            onClick={() => drawerClick(text)}>
                             <ListItemText primary={text}/>
                         </ListItem>
                     ))}

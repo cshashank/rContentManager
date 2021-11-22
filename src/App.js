@@ -24,7 +24,7 @@ function App(props) {
 
         <Link to="/content1/marathi/poem">Marathi</Link>
         <Link to="/content1/english/poem">English</Link>
-        <Drawer/>
+        {/* <Drawer/> */}
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/content1" component={ContentTabs} />

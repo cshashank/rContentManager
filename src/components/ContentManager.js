@@ -28,11 +28,7 @@ const ContentManager = props => {
     const rSeletedTab = useSelector((state) => state.poems.selectedTab);
 
     const dispatch = useDispatch();
-    console.log('redux cm ' + pageData)
-    console.log('redux cm ' + poemLanguage)
-    console.log('redux cm ' + rSeletedTab)
-
-    dispatch(rActions.setLanguage(qLang));
+   // dispatch(rActions.setLanguage(qLang));
 
     const pageLength=8;
     const [items, setItems] = useState([{}])
