@@ -42,14 +42,16 @@ const ContentManager = props => {
     useEffect(() => {
 
         console.log('url 1  param ue '+poemLanguage);
+        console.log('rFeature ue ' + rFeature);
 
         console.log('fetchDbUrls '+fetchDbUrls("marathi").poemURL);
         let dataURLs = fetchDbUrls(poemLanguage);
 
         // let dataURLs = fetchDbUrls(pCtx.language);
         let selectedURL="";
-        if(props.tabValue==0){
+        if(rFeature==="Poem"){
             selectedURL = dataURLs.poemURL;
+            console.log(" selected ue "+ selectedURL);
         }else{
             selectedURL = dataURLs.articleURL
         }

@@ -12,21 +12,21 @@ export const UtilConstants=() =>{
 
 export const fetchDbUrls=(language)=>{
     let dbUrls={}
-    if(language=="marathi"){
+    if(language=="Marathi"){
         dbUrls = {
-            poemURL: "data/marathiPoemsDb.json",
-            articleURL: "data/marathiArticlesDb.json"
+            poemURL: "/data/marathiPoemsDb.json",
+            articleURL: "/data/marathiArticlesDb.json"
         }
-    } else if (language == "english"){
+    } else if (language == "English"){
         dbUrls = {
-            poemURL: "data/englishPoemsDb.json",
-            articleURL: "data/englishArticlesDb.json"
+            poemURL: "/data/englishPoemsDb.json",
+            articleURL: "/data/englishArticlesDb.json"
         }
 
     }else{
         dbUrls = {
-            poemURL: "data/hindiPoemsDb.json",
-            articleURL: "data/hindiArticlesDb.json"
+            poemURL: "/data/hindiPoemsDb.json",
+            articleURL: "/data/hindiArticlesDb.json"
         }
     }
 
