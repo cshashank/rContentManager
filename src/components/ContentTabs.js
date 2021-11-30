@@ -41,9 +41,7 @@ const ContentTabs = props => {
     };
 
     useEffect(() => {
-        console.log('url param ue ' + qLang);
-        dispatch(rActions.selectTab("0"));
-    //    dispatch(rActions.setLanguage(qLang));
+        dispatch(rActions.setLanguage(qLang));
         dispatch(rActions.setFeature(qFeature));
         onChange({}, "test0");
     }, [qLang,qFeature])
@@ -68,7 +66,7 @@ const ContentTabs = props => {
                     <Drawer />
                 </div>
             </AppBar>
-            <ContentManager/>
+            <ContentManager />
         </div>
     );
 };

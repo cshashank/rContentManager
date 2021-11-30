@@ -1,11 +1,16 @@
 import { makeStyles } from '@material-ui/core';
 import { styles } from '../Utils/ContentStyle';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 const useStyles = makeStyles(styles);
 
 export const AppBarButtons = () => {
     const classes = useStyles();
+    const poemLanguage = useSelector((state) => state.poems.plang);
+
+    console.log(' poem language ' + poemLanguage);
 
     let tempButtons = [{
         "feature": 'Poem',
@@ -23,7 +28,7 @@ export const AppBarButtons = () => {
             {tempButtons.map((item, index) => (
 
                 <Link 
-                    to={`/content1/english/` + item.feature}
+                    to={`/content/` +  poemLanguage + '/' + item.feature}
                     key={item.feature}
                     className={classes.menuLink}
                     >

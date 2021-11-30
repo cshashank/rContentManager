@@ -21,10 +21,6 @@ function App(props) {
   return (
     <Provider store={store}>
       <main>
-
-        <Link to="/content1/marathi/poem">Marathi</Link>
-        <Link to="/content1/english/poem">English</Link>
-        {/* <Drawer/> */}
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/content1" component={ContentTabs} />

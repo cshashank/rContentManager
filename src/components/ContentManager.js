@@ -20,12 +20,15 @@ const ContentManager = props => {
     const classes = useStyles();
 
     let { qLang } = useParams();
+    let { qFeature } = useParams();
 
     console.log('url param is ' + qLang);
+    console.log('url param feature is ' + qFeature);
 
     const pageData = useSelector((state) => state.poems.poemPage);
     const poemLanguage = useSelector((state) => state.poems.plang);
     const rSeletedTab = useSelector((state) => state.poems.selectedTab);
+    const rFeature = useSelector((state)=> state.poems.feature);
 
     const dispatch = useDispatch();
    // dispatch(rActions.setLanguage(qLang));
@@ -38,10 +41,10 @@ const ContentManager = props => {
 
     useEffect(() => {
 
-        console.log('url param ue '+poemLanguage);
+        console.log('url 1  param ue '+poemLanguage);
 
         console.log('fetchDbUrls '+fetchDbUrls("marathi").poemURL);
-        let dataURLs = fetchDbUrls(qLang);
+        let dataURLs = fetchDbUrls(poemLanguage);
 
         // let dataURLs = fetchDbUrls(pCtx.language);
         let selectedURL="";
@@ -69,7 +72,7 @@ const ContentManager = props => {
 //                setPage(pageNo + 1)
                 console.log(' setting data  ' + JSON.stringify(data))
             });
-    }, [ qLang ]);
+    }, [poemLanguage, rFeature]);
 
 
     const nextPage = () =>{
