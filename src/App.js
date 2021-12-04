@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import ContentTabs from './components/ContentTabs';
 import { UtilConstants } from './Utils/contentUtil';
@@ -22,7 +22,9 @@ function App(props) {
     <Provider store={store}>
       <main>
         <Switch>
-          <Route path="/" component={Home} exact />
+          <Route path="/" exact >
+              <Redirect to="/content/Marathi/Poem" />
+          </Route>
           <Route path="/content1" component={ContentTabs} />
           <Route path="/marathi"> <ContentTabs plang="marathi" /> </Route>
           <Route path="/hindi"> <ContentTabs plang="hindi" /> </Route>

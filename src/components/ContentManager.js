@@ -105,7 +105,6 @@ const ContentManager = props => {
 
     return (
         <div>
-            selected tab {rSeletedTab}
             <Typography component="div" className={classes.tabContent}>
                 {pageData.map((item, index) => (
                     <Card className={classes.card} key={index}>

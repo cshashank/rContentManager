@@ -52,7 +52,6 @@ const ContentTabs = props => {
 
     return (
         <div>
-            {qLang}
             <AppBar position="static">
                 <Toolbar variant="dense">
                     <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
